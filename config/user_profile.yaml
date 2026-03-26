@@ -1,10 +1,113 @@
 # User Profile Configuration
+# Define your personal, professional, and legal work constraints
+
+personal:
+  name: "Sophie Lewis"
+  email: "sophie.lewis@example.com"
+  citizenship: "British"
+  current_location: "Bangkok, Thailand"
 
 work_authorization:
-  rules:
-    - country: UK
-      remote_only: true
-    - country: Thailand
-      location: Bangkok
-      citizenship_required: false
-      language_required: false
+  # Strict eligibility rules
+  allowed_countries:
+    - "UK"
+    - "Remote"
+    - "International"
+  
+  blocked_patterns:
+    - "Thai nationals only"
+    - "Thai citizenship required"
+    - "Fluent Thai required"
+    - "must already hold Thai work permit"
+    - "onsite Thailand"
+    - "Thailand-based"
+  
+  # Default assumption for jobs that don't specify
+  # Set to ELIGIBLE, REVIEW, or INELIGIBLE
+  default_eligibility: "REVIEW"
+  
+  # If true, only allow remote/wfa/international roles
+  require_remote_for_overseas: true
+
+language:
+  working_languages: ["English"]
+  fluent: ["English"]
+  intermediate: []
+  basic: ["Thai"]
+
+professional_fit:
+  sectors:
+    - "NGO"
+    - "Think Tank"
+    - "Consultancy"
+    - "Research"
+    - "International Organizations"
+    - "Academic"
+  
+  themes:
+    - "Forest governance"
+    - "Environmental policy"
+    - "Land and resource rights"
+    - "Tenure"
+    - "Political ecology"
+    - "Grants and MEL"
+    - "Donor reporting"
+    - "Facilitation"
+    - "Training"
+    - "Workshops"
+  
+  geographic_focus:
+    - "Southeast Asia"
+    - "Global"
+    - "International"
+  
+  role_types:
+    - "Programme Officer"
+    - "Policy Advisor"
+    - "Consultant"
+    - "Researcher"
+    - "MEL Specialist"
+    - "Grants Manager"
+    - "Project Manager"
+    - "Senior Advisor"
+
+scoring:
+  # Scoring boost keywords (0.0 to 1.0)
+  keyword_boosts:
+    forest: 0.15
+    forestry: 0.15
+    governance: 0.10
+    land: 0.15
+    tenure: 0.15
+    indigenous: 0.12
+    environment: 0.10
+    climate: 0.10
+    policy: 0.10
+    research: 0.08
+    southeast: 0.12
+    asia: 0.08
+    donor: 0.10
+    reporting: 0.08
+    mel: 0.12
+    monitoring: 0.08
+    evaluation: 0.08
+    learning: 0.08
+    facilitation: 0.10
+    training: 0.10
+    workshop: 0.08
+    consultancy: 0.08
+    consultant: 0.08
+    remote: 0.20
+    work from anywhere: 0.20
+    home-based: 0.15
+    international: 0.10
+    uk: 0.15
+  
+  # Base score multipliers for eligibility
+  multipliers:
+    ELIGIBLE: 1.0
+    REVIEW: 0.5
+    INELIGIBLE: 0.0
+  
+  # Minimum score to include in shortlist
+  shortlist_threshold: 0.50

@@ -1,0 +1,10 @@
+# User Profile Configuration
+
+user_constraints:
+  age_range: 18-65
+  location: any
+  interests:
+    - technology
+    - science
+    - art
+  experience_level: intermediate
